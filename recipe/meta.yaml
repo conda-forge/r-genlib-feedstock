@@ -30,8 +30,10 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-bh
     - r-matrix
     - r-rcpp >=0.9.10
     - r-bootstrap
@@ -43,6 +45,7 @@ requirements:
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
+    - r-bh
     - r-matrix
     - r-rcpp >=0.9.10
     - r-bootstrap
@@ -62,7 +65,8 @@ about:
   license: GPL-2.0-or-later
   summary: Genealogical data analysis including descriptive statistics (e.g., kinship and inbreeding coefficients) and gene-dropping simulations.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
