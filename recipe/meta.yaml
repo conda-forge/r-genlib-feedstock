@@ -1,4 +1,4 @@
-{% set version = "1.1.7" %}
+{% set version = "1.1.8" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/GENLIB_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/GENLIB/GENLIB_{{ version }}.tar.gz
-  sha256: e24da83f0364102cbf54fc7ef8d3081a688ad6f023e9d3b4e14bb7029e5d9eb8
+  sha256: 93cd2f8aeba6d5ec95e4f113c2373981338a9ce7707e4503a2a46e0cbe237d7d
 
 build:
   merge_build_host: true  # [win]
